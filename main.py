@@ -14,4 +14,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
         while True:
             clientId = conn.recv(16)
+
+            if not clientId:
+                print "New connection did not send anything. Closing it!"
+                break
             
+            serverId = {"The Classical Grand", "Welcome!"}
