@@ -1,6 +1,6 @@
-import asyncio, socket
+import socket
 
-print "simplechat v0.0.0 2025-12-21 16:17"
+print "pychat server v0 2025-12-22 17:23"
 
 PORT = 5000
 
