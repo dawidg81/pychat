@@ -20,6 +20,7 @@ try:
     PORT = int(input("On what port number this server will listen? "))
 except ValueError:
     print("Port number has to be an integer.")
+    quit()
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(('', PORT))
