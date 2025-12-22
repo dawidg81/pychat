@@ -2,7 +2,7 @@ import socket
 
 print "pychat server v0 2025-12-22 17:23"
 
-PORT = 5000
+PORT = input("On what port number this server will listen? ")
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(('', PORT))
