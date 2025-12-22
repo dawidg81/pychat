@@ -5,16 +5,21 @@ print("pychat server v0 2025-12-22 17:23")
 while True:
 
     serverName = input("Name of the server? ")
-    
+
     if len(serverName) > 16:
-        print("Name of the server can not be longer than 16 characters!")
+        print("Name of the server can not be longer than 16 characters.")
 
     serverMOTD = input("Message Of The Day? ")
 
     if len(serverMOTD) > 64:
-        print("Message Of The Day can not be longer than 64 characters!")
+        print("Message Of The Day can not be longer than 64 characters.")
+    else:
+        break
 
-PORT = input("On what port number this server will listen? ")
+try:
+    PORT = int(input("On what port number this server will listen? "))
+except ValueError:
+    print("Port number has to be an integer.")
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind(('', PORT))
@@ -28,7 +33,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             username = username.decode('utf-8').strip()
 
             if not clientId:
-                print "New connection did not send anything. Closing it!"
+                print("New connection did not send anything. Closing it!")
                 break
             
             serverId = {serverName, serverMOTD}
