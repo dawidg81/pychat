@@ -1,6 +1,6 @@
 import socket
 
-print("pychat server v0 2025-12-22 17:23")
+print("pychat server v0")
 
 while True:
 
@@ -31,7 +31,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f"New connection incoming from {addr}")
 
         while True:
-            username = username.decode('utf-8').strip()
+            username = username.decode('ascii').strip()
 
             if not clientId:
                 print("New connection did not send anything. Closing it!")
