@@ -13,7 +13,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f"New connection incoming from {addr}")
 
         while True:
-            clientId = conn.recv(16)
+            username = username.decode('utf-8').strip()
 
             if not clientId:
                 print "New connection did not send anything. Closing it!"
